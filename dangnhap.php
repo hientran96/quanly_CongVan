@@ -9,7 +9,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<title>Quản Lý Công văn</title>
-		<link rel="shortcut icon" type="image/x-icon" href="images/inews.png" />
+		<link rel="shortcut icon" type="image/x-icon" href="img/title.ico" />
 		
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -35,7 +35,7 @@
 							else
 							{
 								
-								$MatKhau=sha1($MatKhau);
+								
 								$sql = "SELECT * FROM nguoidung WHERE TenDangNhap = '$TenDangNhap' AND MatKhau = '$MatKhau'";
 								$nguoidung = mysqli_query($link, $sql);
 								

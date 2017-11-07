@@ -35,7 +35,7 @@ include_once "functions.php";
 							$Email = addslashes($_POST['Email']);
 							$Dienthoai = addslashes($_POST['Dienthoai']);
 					
-
+							$Dienthoai=(int)$Dienthoai;
 							
 							if(trim($HoVaTen) == "")
 								ThongBaoLoi("Họ và tên không được bỏ trống!");
@@ -87,7 +87,22 @@ include_once "functions.php";
 							<div class="form-row">
 							<div class="form-group col-md-6">
 								<label for="Chucvu">Chức vụ</label>
-								<input type="text" class="form-control" id="Chucvu" name="Chucvu" placeholder="" required />
+								
+								<?php
+$sql = "SELECT * FROM chucvu WHERE TenCV='$TenCV' ";
+								$Chucvu = mysqli_query($link, $sql);
+?>
+<select name="Chucvu" id="Chucvu">
+<option value="0">------Chọn chức vụ ------</option>
+<?php
+while($dong=mysql_fetch_array($Chucvu)){
+?>
+<option value="<?php echo $dong['MaCV']?> "><?php echo $dong['TenCV']; ?></option>
+<?php
+}
+?>
+</select>
+								
 							</div>
 							<div class="form-group col-md-6">
 								<label for="Email">Email</label>
