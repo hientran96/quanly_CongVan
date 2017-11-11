@@ -16,27 +16,30 @@
 		<link rel="stylesheet" href="css/bootstrap-custom.css" />
 	</head>
 	<body>
+
 		<?php include_once "navbar.php"; ?>
-		<div class="container" style="margin: 8% 8% 5% 5%;">
+			<div class="container" style="margin: 5% 8% 2% 5%;">
 			<div class="card">
-				<h4 class="card-header">Đăng xuất</h4>
+				<h4 class="card-header">Đăng Xuất</h4>
 				<div class="card-body">
 					<?php
-						// Hủy SESSION
-						unset($_SESSION['ID']);
-						unset($_SESSION['HoVaTen']);
-						unset($_SESSION['QuyenHan']);
 						
-						// Quay về trang chủ
-						header("Location: index.php");
+							// Đăng ký SESSION
+							unset($_SESSION['ID']) ;
+							unset($_SESSION['HoVaTen'])	;
+							unset($_SESSION['QuyenHan']);
+										
+							// Quay về trang chủ
+							header("Location: index.php");
 					?>
+					
+					
 				</div>
 			</div>
 			
 			
 		</div>
-		</hr>
-		<?php include_once "footer.php"; ?>
+			<?php include_once "footer.php"; ?>
 		
 		
 		<!-- Optional JavaScript -->
@@ -46,3 +49,4 @@
 		<script src="js/bootstrap.min.js"></script>
 	</body>
 </html>
+	

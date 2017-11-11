@@ -23,20 +23,20 @@
 				<h4 class="card-header">Đăng nhập</h4>
 				<div class="card-body">
 					<?php
-						if(isset($_POST['TenDangNhap']))
+						if(isset($_POST['Manv']))
 						{
-							$TenDangNhap = addslashes($_POST['TenDangNhap']);
+							$Manv = addslashes($_POST['Manv']);
 							$MatKhau = addslashes($_POST['MatKhau']);
 							
-							if(trim($TenDangNhap) == "")
-								ThongBaoLoi("Tên đăng nhập không được bỏ trống!");
+							if(trim($Manv) == "")
+								ThongBaoLoi("Mã nhân viên không được bỏ trống!");
 							elseif(trim($MatKhau) == "")
 								ThongBaoLoi("Mật khẩu không được bỏ trống!");
 							else
 							{
 								
 								
-								$sql = "SELECT * FROM nguoidung WHERE TenDangNhap = '$TenDangNhap' AND MatKhau = '$MatKhau'";
+								$sql = "SELECT * FROM nguoidung WHERE Manv = '$Manv' AND MatKhau = '$MatKhau'";
 								$nguoidung = mysqli_query($link, $sql);
 								
 								if(mysqli_num_rows($nguoidung) <= 0)
@@ -63,8 +63,8 @@
 					?>
 					<form method="post" action="dangnhap.php">
 						<div class="form-group">
-							<label for="TenDangNhap">Tên đăng nhập</label>
-							<input type="text" class="form-control" id="TenDangNhap" name="TenDangNhap" placeholder="" required />
+							<label for="Manv">Mã nhân viên</label>
+							<input type="text" class="form-control" id="Manv" name="Manv" placeholder="" required />
 						</div>
 						<div class="form-group">
 							<label for="MatKhau">Mật khẩu</label>
