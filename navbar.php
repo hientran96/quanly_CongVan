@@ -1,6 +1,6 @@
 <img src="img/congvan.png" class="img-fluid" alt="Responsive image">
 <nav class="navbar navbar-expand-lg navbar-Secondary" style="background-color:#064762;">
-  
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -47,7 +47,7 @@
               <a class="dropdown-item" href="doimatkhau.php">Đổi mật khẩu</a>
               <a class="dropdown-item" href="#">Cập nhật hồ sơ</a>
               <a class="dropdown-item" href="baiviet_them.php">Đăng bài viết</a>
-              
+
             </div>
           </li>
       <?php
@@ -57,7 +57,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quản lý</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="chude.php">Quản lý chủ đề</a>
+                <a class="dropdown-item" href="danhmuc.php">Quản lý danh muc</a>
                 <a class="dropdown-item" href="baiviet.php">Quản lý bài viết</a>
                 <a class="dropdown-item" href="nguoidung.php">Quản lý người dùng</a>
                 <a class="dropdown-item" href="baiviet_nguoidung.php">Bài viết của tôi</a>
