@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2017 at 03:44 AM
+-- Generation Time: Nov 12, 2017 at 06:00 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -112,22 +112,23 @@ DROP TABLE IF EXISTS `nguoidung`;
 CREATE TABLE IF NOT EXISTS `nguoidung` (
 `ID` int(11) NOT NULL,
   `HoVaTen` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `TenDangNhap` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `Manv` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `MatKhau` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `QuyenHan` tinyint(4) NOT NULL,
   `Khoa` tinyint(4) NOT NULL,
-  `Chucvu` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `Manv` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `Maphong` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `MaCV` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `Chucvu` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `nguoidung`
 --
 
-INSERT INTO `nguoidung` (`ID`, `HoVaTen`, `TenDangNhap`, `MatKhau`, `QuyenHan`, `Khoa`, `Chucvu`, `Manv`, `Maphong`, `MaCV`) VALUES
-(1, 'Trần Thị Mỹ Hiền', 'q', 'q', 1, 0, '', 'NV01', '', '');
+INSERT INTO `nguoidung` (`ID`, `HoVaTen`, `Manv`, `MatKhau`, `QuyenHan`, `Khoa`, `Chucvu`) VALUES
+(4, 'Trần Thị Phương Phảo', 'NV01', 'thao', 2, 0, ''),
+(5, 'Nguyễn Thị Kim Hà', 'NV01', 'ha', 1, 0, ''),
+(7, 'Nguyễn Thị Kim Vàng', 'NV01', '02dd9e90713bf24d33ef2ffd3167a33a6a73739e', 2, 0, ''),
+(8, 'Nguyễn Thị Kim Vàng', 'NV01', '02dd9e90713bf24d33ef2ffd3167a33a6a73739e', 2, 0, 'q'),
+(9, 'd', 'd', '3c363836cf4e16666669a25da280a1865c2d2874', 2, 0, 'd');
 
 -- --------------------------------------------------------
 
@@ -227,7 +228,7 @@ ALTER TABLE `vanbancanhan`
 -- AUTO_INCREMENT for table `nguoidung`
 --
 ALTER TABLE `nguoidung`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

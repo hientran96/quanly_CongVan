@@ -59,7 +59,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="chude.php">Quản lý chủ đề</a>
                 <a class="dropdown-item" href="baiviet.php">Quản lý bài viết</a>
-                <a class="dropdown-item" href="#">Quản lý người dùng</a>
+                <a class="dropdown-item" href="nguoidung.php">Quản lý người dùng</a>
                 <a class="dropdown-item" href="baiviet_nguoidung.php">Bài viết của tôi</a>
               </div>
             </li>
