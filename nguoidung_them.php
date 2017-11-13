@@ -78,10 +78,20 @@
 								<label for="XacNhanMatKhau">Xác nhận mật khẩu</label>
 								<input type="password" class="form-control" id="XacNhanMatKhau" name="XacNhanMatKhau" placeholder="" required />
 							</div>
-							<div class="form-group col-md-6">
-								<label for="Chucvu">Chức vụ</label>
-								<input type="text" class="form-control" id="Chucvu" name="Chucvu" placeholder="" required />
-							</div>
+							<div class="form-group col-md-6" >
+							<label for="Chucvu">Chức vụ</label>
+							<select  class="form-control" id="Chucvu" name="Chucvu" required >
+							<option>--Chọn Chức vụ-- </option>
+							<?php
+									$sql = "SELECT * FROM chucvu";
+									$danhsach = mysqli_query($link, $sql);							
+									while($dong = mysqli_fetch_array($danhsach))
+									{
+										echo "<option value={$dong['ID']}>{$dong['TenCV']}</option>";																	
+									}
+							?>
+							</select>
+						</div>	
 						</div>
 						
 						<button type="submit" class="btn btn-primary">Đăng ký</button>
@@ -90,9 +100,9 @@
 			</div>
 			
 			<hr />
-			<footer>Bản quyền &copy; <?php echo date("Y") ?> bởi DH15TH.</footer>
+			
 		</div>
-		
+		<?php include_once "footer.php"; ?>
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="js/jquery-3.2.1.min.js"></script>

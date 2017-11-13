@@ -34,7 +34,7 @@
 								ThongBaoLoi("Mật khẩu không được bỏ trống!");
 							else
 							{
-								
+								$MatKhau=sha1($MatKhau);
 								
 								$sql = "SELECT * FROM nguoidung WHERE Manv = '$Manv' AND MatKhau = '$MatKhau'";
 								$nguoidung = mysqli_query($link, $sql);

@@ -49,7 +49,7 @@
           </a>
         </div>
         
-		<div class="card" style="width: 80%;margin-left: 0.5%; height:800px;" >
+		<div class="card" style="width: 80%;margin-left: 0.5%;margin-bottom: 15px; " >
 		  <h4 class="card-header">Lịch sử hình thành</h4>
 			<div class="card-body">
 				<p class="card-text">
@@ -83,13 +83,13 @@
 
          Đơn vị có 14 năm liên tục được công nhận Tập thể lao động tiên tiến, trong đó có 04 năm (2007, 2008, 2009, 2010) đạt Tập thể lao động xuất sắc; nhiều cá nhân là chiến sĩ thi đua cơ sở, chiến sĩ thi đua cấp tỉnh.
 
-         Hướng đến tương lai, Phòng Hành chính - Tổng hợp phấn đấu là đơn vị trong tóp dẫn đầu về phong trào thi đua hằng năm của Trường, không ngừng đổi mới, cải tiến phong các làm việc, tinh thần thái độ phục vụ; tích cực tham mưu đề xuất với Ban Giám hiệu thực hiện giải pháp nâng cao hiệu quả quản lý; xây dựng trường học văn hoá, đảm bảo trật tự, an toàn, bảo vệ tính mạng và tài sản./.</p>
+         Hướng đến tương lai, Phòng Hành chính - Tổng hợp phấn đấu là đơn vị trong tóp dẫn đầu về phong trào thi đua hằng năm của Trường, không ngừng đổi mới, cải tiến phong các làm việc, tinh thần thái độ phục vụ; tích cực tham mưu đề xuất với Ban Giám hiệu thực hiện giải pháp nâng cao hiệu quả quản lý; xây dựng trường học văn hoá, đảm bảo trật tự, an toàn, bảo vệ tính mạng và tài sản.</p>
 						</div>
 					</div >	
 				</p>	
 			</div>
 		</div>	
-        <div class="card" style="margin-top:-800px;width: 230px; height:800px; float:right; margin-right:10px;" >
+        <div class="card" style="margin-top:-806px;width: 230px; height:800px; float:right; margin-right:10px;" >
           <h4 class="card-header">Thông tin thêm</h4>
           <div class="card-body">
             <p class="card-text">
@@ -113,15 +113,13 @@
         
         <!-- /.container -->
         <!-- Footer -->
-        <footer class="py-5 bg-dark" style="background-color:#064762; margin-top:10px; height:30px;">
-          <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Công Ty ABC 2017</p>
-          </div>
-          <!-- /.container -->
-        </footer>
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-       
-    </body>
-  </html>
+         <?php include_once "footer.php"; ?>
+    
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
