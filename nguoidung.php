@@ -2,10 +2,11 @@
 	require_once "config.php";
 	include_once "functions.php";
 	
-	$sql = "SELECT * FROM nguoidung";
-	$danhsach = mysqli_query($link, $sql);
+	$sql = "SELECT n.* , c.TenCV
+			FROM nguoidung n, chucvu c
+			WHERE n.ID_chucvu = c.ID ";
+			$danhsach = mysqli_query($link, $sql);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -20,8 +21,6 @@
 		<link rel="stylesheet" href="css/bootstrap-custom.css" />
 	</head>
 	<body>
-	
-
 		<?php include_once "navbar.php"; ?>
 			<div class="container" style="margin: 5% 8% 2% 5%;">
 			<div class="card">
@@ -49,7 +48,7 @@
 										echo "<th>{$dong['ID']}</th>";
 										echo "<td>{$dong['Manv']}</td>";
 										echo "<td>{$dong['HoVaTen']}</td>";
-										echo "<td>{$dong['Chucvu']}</td>";
+										echo "<td>{$dong['TenCV']}</td>";
 										echo "<td>{$dong['MatKhau']}</td>";
 										echo "<td class='text-center'><a href='nguoidung_sua.php?id={$dong['ID']}'><img src='img/edit.png' /></a></td>";
 										echo "<td class='text-center'><a onclick='return confirm(\"Bạn có muốn xóa người dùng {$dong['HoVaTen']} không?\");' href='nguoidung_xoa.php?id={$dong['ID']}'><img src='img/delete.png' /></a></td>";
@@ -67,8 +66,6 @@
 		<?php include_once "footer.php"; ?>
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="js/jquery-3.2.1.min.js"></script>
-		<script src="js/popper.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		
 	</body>
 </html>

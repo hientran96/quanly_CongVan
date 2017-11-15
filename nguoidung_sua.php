@@ -17,7 +17,7 @@
 	</head>
 	<body>
 
-			<?php include_once "navbar.php"; ?>
+		<?php include_once "navbar.php"; ?>
 			<div class="container" style="margin: 5% 8% 2% 5%;">
 			<div class="card">
 				<h4 class="card-header">Sửa người dùng</h4>
@@ -27,13 +27,13 @@
 						{
 							$ID = addslashes($_POST['ID']);
 							$HoVaTen = addslashes($_POST['HoVaTen']);
-							$Chucvu= addslashes($_POST['Chucvu']);
+							$ID_chucvu= addslashes($_POST['ID_chucvu']);
 							
-							if(trim($HoVaTen) == "" or trim($Chucvu)=="")
+							if(trim($HoVaTen) == "" )
 								ThongBaoLoi("Trường không được bỏ trống!");
 							else
 							{
-								$sql = "UPDATE nguoidung SET HoVaTen = '$HoVaTen', Chucvu='$Chucvu' WHERE ID = $ID";
+								$sql = "UPDATE nguoidung SET ID_chucvu='$ID_chucvu',HoVaTen = '$HoVaTen'WHERE ID = $ID";
 								$kq = mysqli_query($link, $sql);
 								if($kq)
 									header("Location: nguoidung.php");
@@ -55,30 +55,30 @@
 							$dong = mysqli_fetch_array($danhsach);
 						
 					?>
-							<form method="post" action="nguoidung_sua.php">
-								<input type="hidden" id="ID" name="ID" value="<?php echo $dong['ID'] ?>" />
-							<div class="form-group col-md-6" >
-									<label for="HoVaTen">Tên người dùng</label>
-									<input type="text" class="form-control" id="HoVaTen" name="HoVaTen" value="<?php echo $dong['HoVaTen'] ?>" placeholder="" required />
-									
-								</div>
-								<div class="form-group col-md-6" >
-							<label for="Chucvu">Chức vụ</label>
-							<select  class="form-control" id="Chucvu" name="Chucvu" required >
-							<option>--Chọn Chức vụ-- </option>
-							<?php
-									$sql = "SELECT * FROM chucvu";
-									$danhsach = mysqli_query($link, $sql);							
-									while($dong = mysqli_fetch_array($danhsach))
-									{
-										echo "<option value={$dong['ID']}>{$dong['TenCV']}</option>";																	
-									}
-							?>
+					<form method="post" action="nguoidung_sua.php">
+						<input type="hidden" id="ID" name="ID" value="<?php echo $dong['ID'] ?>" />
+						<div class="form-group col-md-6" >
+							<label for="HoVaTen">Tên người dùng</label>
+							<input type="text" class="form-control" id="HoVaTen" name="HoVaTen" value="<?php echo $dong['HoVaTen'] ?>" placeholder="" required />
+							
+						</div>
+						<div class="form-group col-md-6" >
+							<label for="ID_chucvu">Chức vụ</label>
+							<select  class="form-control" id="ID_chucvu" name="ID_chucvu" required >
+								<option>--Chọn Chức vụ-- </option>
+								<?php
+										$sql = "SELECT * FROM chucvu";
+																	$danhsach = mysqli_query($link, $sql);
+										while($dong = mysqli_fetch_array($danhsach))
+										{
+												echo "<option value={$dong['ID']}>{$dong['TenCV']}</option>";
+}
+								?>
 							</select>
-						</div>	
-								
-								<button type="submit" class="btn btn-primary">Cập nhật</button>
-							</form>
+						</div>
+						
+						<button type="submit" class="btn btn-primary">Cập nhật</button>
+					</form>
 					<?php
 						}
 					?>
@@ -91,8 +91,5 @@
 		<?php include_once "footer.php"; ?>
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="js/jquery-3.2.1.min.js"></script>
-		<script src="js/popper.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
 	</body>
 </html>

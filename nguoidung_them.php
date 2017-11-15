@@ -23,21 +23,24 @@
 				<h4 class="card-header">Đăng ký thành viên</h4>
 				<div class="card-body">
 					<?php
-						if(isset($_POST['HoVaTen']))
+						if(isset($_POST['Manv']))
 						{
-
 							$HoVaTen = addslashes($_POST['HoVaTen']);
 							$Manv = addslashes($_POST['Manv']);
+							$ID_chucvu = addslashes($_POST['ID_chucvu']);
 							$MatKhau = addslashes($_POST['MatKhau']);
 							$XacNhanMatKhau = addslashes($_POST['XacNhanMatKhau']);
-							$Chucvu= addslashes($_POST['Chucvu']);
+							
 							
 							if(trim($HoVaTen) == "")
 								ThongBaoLoi("Họ và tên không được bỏ trống!");
 							elseif(trim($Manv) == "")
 								ThongBaoLoi("Mã nhân viên không được bỏ trống!");
+							
+
 							elseif(trim($MatKhau) == "")
 								ThongBaoLoi("Mật khẩu không được bỏ trống!");
+						
 							elseif(trim($XacNhanMatKhau) == "")
 								ThongBaoLoi("Xác nhận mật khẩu không được bỏ trống!");
 							elseif($MatKhau != $XacNhanMatKhau)
@@ -46,8 +49,8 @@
 							{
 								
 								$MatKhau=sha1($MatKhau);
-								$sql = "INSERT INTO nguoidung(HoVaTen, Manv, MatKhau, QuyenHan, Khoa,Chucvu) 
-										VALUES ('$HoVaTen', '$Manv', '$MatKhau', 2, 0,'$Chucvu')";
+								$sql = "INSERT INTO nguoidung(Manv,ID_chucvu,HoVaTen,MatKhau,QuyenHan, Khoa) 
+										VALUES ('$Manv','$ID_chucvu','$HoVaTen','$MatKhau', 2, 0)";
 								$kq = mysqli_query($link, $sql);
 								if($kq)
 									ThongBao("Đăng ký thành công!");
@@ -79,8 +82,8 @@
 								<input type="password" class="form-control" id="XacNhanMatKhau" name="XacNhanMatKhau" placeholder="" required />
 							</div>
 							<div class="form-group col-md-6" >
-							<label for="Chucvu">Chức vụ</label>
-							<select  class="form-control" id="Chucvu" name="Chucvu" required >
+							<label for="ID_chucvu">Chức vụ</label>
+							<select  class="form-control" id="ID_chucvu" name="ID_chucvu" required >
 							<option>--Chọn Chức vụ-- </option>
 							<?php
 									$sql = "SELECT * FROM chucvu";
@@ -105,8 +108,6 @@
 		<?php include_once "footer.php"; ?>
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="js/jquery-3.2.1.min.js"></script>
-		<script src="js/popper.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+	
 	</body>
 </html>
