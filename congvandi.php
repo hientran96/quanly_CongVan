@@ -2,7 +2,7 @@
 	require_once "config.php";
 	include_once "functions.php";
 
-	$sql = "SELECT * FROM danhmuc";
+	$sql = "SELECT * FROM congvandi";
 	$danhsach = mysqli_query($link, $sql);
 ?>
 <!DOCTYPE html>
@@ -23,7 +23,7 @@
 			<?php include_once "navbar.php"; ?>
 <div class="container" style="margin: 5% 8% 2% 5%;">
 			<div class="card">
-				<h4 class="card-header">Quản lý danh mục</h4>
+				<h4 class="card-header">CÔNG VĂN ĐI</h4>
 				<div class="card-body">
 					<p><a class="btn btn-primary" href="danhmuc_them.php" role="button">Thêm danh mục</a></p>
 

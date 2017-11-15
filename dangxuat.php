@@ -35,7 +35,7 @@
 			</div>
 			
 			<hr />
-			<footer>Bản quyền &copy; <?php echo date("Y") ?> bởi DH15TH.</footer>
+		<?php include_once "footer.php"; ?>
 		</div>
 		
 		<!-- Optional JavaScript -->

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2017 at 06:00 AM
+-- Generation Time: Nov 15, 2017 at 11:15 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -28,19 +28,18 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `chucvu`;
 CREATE TABLE IF NOT EXISTS `chucvu` (
-  `MaCV` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+`ID` int(10) NOT NULL,
   `TenCV` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `chucvu`
 --
 
-INSERT INTO `chucvu` (`MaCV`, `TenCV`) VALUES
-('CV01', 'Giám Đốc'),
-('CV02', 'Nhân Viên Hành Chính'),
-('CV03', 'Nhân Viên Tài Vụ'),
-('CV04', 'Nhân Viên Công Nghệ Thông Tin');
+INSERT INTO `chucvu` (`ID`, `TenCV`) VALUES
+(1, 'Giám đốc'),
+(2, 'Nhân viên kinh doanh'),
+(3, 'Nhân Viên Hành Chính');
 
 -- --------------------------------------------------------
 
@@ -98,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `congvandi` (
 
 DROP TABLE IF EXISTS `danhmuc`;
 CREATE TABLE IF NOT EXISTS `danhmuc` (
-  `MaDM` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+`ID` int(11) NOT NULL,
   `TenDM` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -111,24 +110,20 @@ CREATE TABLE IF NOT EXISTS `danhmuc` (
 DROP TABLE IF EXISTS `nguoidung`;
 CREATE TABLE IF NOT EXISTS `nguoidung` (
 `ID` int(11) NOT NULL,
+  `Manv` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `ID_chucvu` int(10) NOT NULL,
   `HoVaTen` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `Manv` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `MatKhau` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `QuyenHan` tinyint(4) NOT NULL,
-  `Khoa` tinyint(4) NOT NULL,
-  `Chucvu` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `QuyenHan` int(10) NOT NULL,
+  `Khoa` tinyint(4) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `nguoidung`
 --
 
-INSERT INTO `nguoidung` (`ID`, `HoVaTen`, `Manv`, `MatKhau`, `QuyenHan`, `Khoa`, `Chucvu`) VALUES
-(4, 'Trần Thị Phương Phảo', 'NV01', 'thao', 2, 0, ''),
-(5, 'Nguyễn Thị Kim Hà', 'NV01', 'ha', 1, 0, ''),
-(7, 'Nguyễn Thị Kim Vàng', 'NV01', '02dd9e90713bf24d33ef2ffd3167a33a6a73739e', 2, 0, ''),
-(8, 'Nguyễn Thị Kim Vàng', 'NV01', '02dd9e90713bf24d33ef2ffd3167a33a6a73739e', 2, 0, 'q'),
-(9, 'd', 'd', '3c363836cf4e16666669a25da280a1865c2d2874', 2, 0, 'd');
+INSERT INTO `nguoidung` (`ID`, `Manv`, `ID_chucvu`, `HoVaTen`, `MatKhau`, `QuyenHan`, `Khoa`) VALUES
+(1, 'NV01', 2, 'Trần Thị Mỹ Hiền', '47c5580df81fe23f3d201a711cdb6d04bc084dac', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -182,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `vanbancanhan` (
 -- Indexes for table `chucvu`
 --
 ALTER TABLE `chucvu`
- ADD PRIMARY KEY (`MaCV`);
+ ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `congvande`
@@ -200,13 +195,13 @@ ALTER TABLE `congvandi`
 -- Indexes for table `danhmuc`
 --
 ALTER TABLE `danhmuc`
- ADD PRIMARY KEY (`MaDM`);
+ ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `nguoidung`
 --
 ALTER TABLE `nguoidung`
- ADD PRIMARY KEY (`ID`);
+ ADD PRIMARY KEY (`ID`), ADD UNIQUE KEY `Manv` (`Manv`), ADD UNIQUE KEY `ID_chucvu` (`ID_chucvu`), ADD UNIQUE KEY `ID_chucvu_2` (`ID_chucvu`);
 
 --
 -- Indexes for table `tintuc`
@@ -225,10 +220,20 @@ ALTER TABLE `vanbancanhan`
 --
 
 --
+-- AUTO_INCREMENT for table `chucvu`
+--
+ALTER TABLE `chucvu`
+MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `danhmuc`
+--
+ALTER TABLE `danhmuc`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `nguoidung`
 --
 ALTER TABLE `nguoidung`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

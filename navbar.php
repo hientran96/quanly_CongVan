@@ -21,7 +21,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Công văn</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="gioithieulichsu.php">Công văn đi</a>
+          <a class="dropdown-item" href="congvandi.php">Công văn đi</a>
           <a class="dropdown-item" href="#">Công văn đến</a>
           <a class="dropdown-item" href="#">Văn bản cá nhân</a>
         </div>
@@ -45,9 +45,8 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['HoVaTen']; ?></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="doimatkhau.php">Đổi mật khẩu</a>
-              <a class="dropdown-item" href="#">Cập nhật hồ sơ</a>
-              <a class="dropdown-item" href="baiviet_them.php">Đăng bài viết</a>
-              
+             
+             
             </div>
           </li>
       <?php
@@ -57,10 +56,12 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quản lý</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="chude.php">Quản lý chủ đề</a>
+                <a class="dropdown-item" href="danhmuc.php">Quản lý danh mục</a>
                 <a class="dropdown-item" href="baiviet.php">Quản lý bài viết</a>
                 <a class="dropdown-item" href="nguoidung.php">Quản lý người dùng</a>
                 <a class="dropdown-item" href="baiviet_nguoidung.php">Bài viết của tôi</a>
+                 <a class="dropdown-item" href="baiviet_them.php">Đăng công văn đi</a>
+               <a class="dropdown-item" href="baiviet_them.php">Đăng công văn đến</a>
               </div>
             </li>
       <?php
