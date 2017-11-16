@@ -57,11 +57,10 @@
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quản lý</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="danhmuc.php">Quản lý danh mục</a>
-                <a class="dropdown-item" href="baiviet.php">Quản lý bài viết</a>
                 <a class="dropdown-item" href="nguoidung.php">Quản lý người dùng</a>
-                <a class="dropdown-item" href="baiviet_nguoidung.php">Bài viết của tôi</a>
-                 <a class="dropdown-item" href="baiviet_them.php">Đăng công văn đi</a>
-               <a class="dropdown-item" href="baiviet_them.php">Đăng công văn đến</a>
+                 <a class="dropdown-item" href="tintuc.php">Quản lý tin tức</a>
+                 <a class="dropdown-item" href="#">Đăng công văn đi</a>
+               <a class="dropdown-item" href="#">Đăng công văn đến</a>
               </div>
             </li>
       <?php

@@ -52,21 +52,19 @@
         <div class="card-body">
           <p class="card-text">
             <div class="media">
-              <img class="align-self-center mr-3" src="img/tintuc.jpg" alt="Generic placeholder image" style="width: 150px;">
+              <a href="tintuc_xem.php"><img class="align-self-center mr-3" src="img/tintuc.jpg" alt="Generic placeholder image" style="width: 150px;"></a>
               <div class="media-body">
-                <h5 class="mt-0">Thông báo về công tác văn thư, hành chính của Trường Đại học An Giang</h5>
-                <p>Quyết định v/v công bố thủ tục hành chính mới ban hành thuộc  phạm vi chức năng quản lý của Bộ GD&ĐT</p>
-                <p class="mb-0">Căn cứ kết luận của Hiệu trưởng tại buổi họp duyệt kế hoạch năm học của Phòng Hành chính - Tổng hợp ngày 26/9/2016;
-                Để công tác văn thư, hành chính của Trường đi vào nề nếp, Ban Giám hiệu thông báo một số nội dung trong công tác văn thư hành chính của Trường </p>
+                <a href="#"><h5 class="mt-0">Thông báo về công tác văn thư, hành chính của Trường Đại học An Giang</h5></a>
+                <p>Quyết định v/v công bố thủ tục hành chính mới ban hành thuộc  phạm vi chức năng quản lý của Bộ GD&ĐT<a href="#">Xem thêm</a></p>
+                
               </div>
             </div>
-            <div class="media">
-              <img class="align-self-center mr-3" src="img/tintuc.jpg" alt="Generic placeholder image" style="width: 150px;">
+           <div class="media" style="margin-top: 5px;">
+              <a href="#"><img class="align-self-center mr-3" src="img/tintuc.jpg" alt="Generic placeholder image" style="width: 150px;"></a>
               <div class="media-body">
-                <h5 class="mt-0">Thông báo về công tác văn thư, hành chính của Trường Đại học An Giang</h5>
-                <p>Quyết định v/v công bố thủ tục hành chính mới ban hành thuộc  phạm vi chức năng quản lý của Bộ GD&ĐT</p>
-                <p class="mb-0">Căn cứ kết luận của Hiệu trưởng tại buổi họp duyệt kế hoạch năm học của Phòng Hành chính - Tổng hợp ngày 26/9/2016;
-                Để công tác văn thư, hành chính của Trường đi vào nề nếp, Ban Giám hiệu thông báo một số nội dung trong công tác văn thư hành chính của Trường </p>
+                <a href="#"><h5 class="mt-0">Thông báo về công tác văn thư, hành chính của Trường Đại học An Giang</h5></a>
+                <p>Quyết định v/v công bố thủ tục hành chính mới ban hành thuộc  phạm vi chức năng quản lý của Bộ GD&ĐT<a href="#">Xem thêm</a></p>
+                
               </div>
             </div>
             <div class="media">

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2017 at 11:15 PM
+-- Generation Time: Nov 16, 2017 at 07:51 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -99,7 +99,15 @@ DROP TABLE IF EXISTS `danhmuc`;
 CREATE TABLE IF NOT EXISTS `danhmuc` (
 `ID` int(11) NOT NULL,
   `TenDM` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `danhmuc`
+--
+
+INSERT INTO `danhmuc` (`ID`, `TenDM`) VALUES
+(1, 'Tin tức'),
+(2, 'Sự kiện');
 
 -- --------------------------------------------------------
 
@@ -116,14 +124,14 @@ CREATE TABLE IF NOT EXISTS `nguoidung` (
   `MatKhau` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `QuyenHan` int(10) NOT NULL,
   `Khoa` tinyint(4) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `nguoidung`
 --
 
 INSERT INTO `nguoidung` (`ID`, `Manv`, `ID_chucvu`, `HoVaTen`, `MatKhau`, `QuyenHan`, `Khoa`) VALUES
-(1, 'NV01', 2, 'Trần Thị Mỹ Hiền', '47c5580df81fe23f3d201a711cdb6d04bc084dac', 1, 0);
+(1, 'NV01', 1, 'Trần Thị Mỹ Hiền', '47c5580df81fe23f3d201a711cdb6d04bc084dac', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -145,12 +153,22 @@ CREATE TABLE IF NOT EXISTS `phongban` (
 
 DROP TABLE IF EXISTS `tintuc`;
 CREATE TABLE IF NOT EXISTS `tintuc` (
-  `Tieude` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `Ngaydang` date NOT NULL,
-  `Noidung` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `Hinhanh` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `Nguoidang` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+`ID` int(10) NOT NULL,
+  `Tieude` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ID_danhmuc` int(10) NOT NULL,
+  `ID_nguoidung` int(10) NOT NULL,
+  `Ngaydang` datetime NOT NULL,
+  `Tomtat` text COLLATE utf8_unicode_ci NOT NULL,
+  `Noidung` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `tintuc`
+--
+
+INSERT INTO `tintuc` (`ID`, `Tieude`, `ID_danhmuc`, `ID_nguoidung`, `Ngaydang`, `Tomtat`, `Noidung`) VALUES
+(1, 'Bộ trưởng Tài chính: Đã truy thu hơn 3.000 tỷ đồng chuyển giá', 1, 1, '2017-11-16 10:22:53', 'Bộ trưởng Tài chính: Đã truy thu hơn 3.000 tỷ đồng chuyển giá', '<p><strong>Năm 2017 truy thu hơn 3.000 tỷ đồng chuyển gi&aacute;</strong></p>\r\n\r\n<table align="center" border="0" cellpadding="3" cellspacing="0">\r\n	<tbody>\r\n		<tr>\r\n			<td><img alt="Dung-2a-7500-1510802102.jpg" src="https://i-kinhdoanh.vnecdn.net/2017/11/16/Dung-2a-7500-1510802102_600x0.jpg" /></td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Bộ trưởng Đinh Tiến Dũng</p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>Bộ trưởng T&agrave;i ch&iacute;nh thừa nhận chuyển gi&aacute; l&agrave; vấn đề&nbsp;bức x&uacute;c của x&atilde; hội thời gian qua. Về ph&aacute;p l&yacute;, năm 1995 Bộ T&agrave;i ch&iacute;nh đ&atilde; c&oacute; văn bản hướng dẫn kiểm so&aacute;t chuyển gi&aacute;. Thời gian gần đ&acirc;y tiếp tục ho&agrave;n thiện c&aacute;c ch&iacute;nh s&aacute;ch. Năm 2017, Bộ đ&atilde; tr&igrave;nh Ch&iacute;nh phủ ban h&agrave;nh Nghị định 20 về quản l&yacute; thuế với doanh nghiệp ph&aacute;t sinh giao dịch li&ecirc;n kết v&agrave; ban h&agrave;nh th&ocirc;ng tư, dựa tr&ecirc;n kinh nghiệm của OECD.&nbsp;</p>\r\n'),
+(2, 'Các siêu sao sân cỏ giữ body như tạc tượng ra sao', 2, 1, '2017-11-16 10:57:53', 'C.Ronaldo và các ngôi sao bóng đá tập gym với cường độ cao cùng bài tập thể lực để sở hữu thân hình chuẩn, theo Health+.', '<p>Từ khi 16 tuổi, m&ocirc;n thể h&igrave;nh đ&atilde; c&oacute; sức h&uacute;t to lớn với Thuận. Ch&agrave;ng trai say m&ecirc; tập luyện bởi y&ecirc;u th&iacute;ch vẻ ngo&agrave;i mạnh mẽ v&agrave; cơ bắp.&nbsp;Ng&agrave;y ấy, cậu thanh ni&ecirc;n 8x kh&aacute; h&agrave;i l&ograve;ng về c&acirc;n nặng 65 kg, cơ thể c&acirc;n đối so với bạn b&egrave; trang lứa đang độ tuổi dậy th&igrave; gầy g&ograve;. Mong ước của Thuận l&agrave; cơ thể cần săn chắc, nhiều cơ bắp hơn th&ocirc;ng qua c&aacute;c b&agrave;i tập thể h&igrave;nh.</p>\r\n\r\n<table align="center" border="0" cellpadding="3" cellspacing="0">\r\n	<tbody>\r\n		<tr>\r\n			<td><img alt="hon-10-nam-tan-tien-de-tap-the-hinh-cua-chang-trai-phan-thiet" src="https://i-suckhoe.vnecdn.net/2017/11/14/tap-gym-2043-1510633704.jpg" /></td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>Thuận Trần d&agrave;nh hơn 10 năm tuổi trẻ theo đuổi thể h&igrave;nh chuy&ecirc;n nghiệp. Ảnh:&nbsp;<em>T.T</em></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>Những cơn đau mỏi cơ k&eacute;o d&agrave;i hằng tuần thời gian đầu tập luyện rất khiến người mới tập gym nản l&ograve;ng bỏ cuộc. Thuận tự nhủ những cơn đau chứng tỏ m&igrave;nh đ&atilde; đi đ&uacute;ng đường, cơ bắp được &ldquo;k&iacute;ch hoạt&rdquo; để ph&aacute;t triển n&ecirc;n cố gắng vượt qua. B&eacute;n duy&ecirc;n với thể h&igrave;nh v&agrave; t&igrave;m thấy đam m&ecirc;, Thuận d&agrave;nh nhiều thời gian v&agrave; c&ocirc;ng sức để theo thể h&igrave;nh chuy&ecirc;n nghiệp.</p>\r\n');
 
 -- --------------------------------------------------------
 
@@ -207,7 +225,7 @@ ALTER TABLE `nguoidung`
 -- Indexes for table `tintuc`
 --
 ALTER TABLE `tintuc`
- ADD PRIMARY KEY (`Tieude`);
+ ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `vanbancanhan`
@@ -228,12 +246,17 @@ MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `danhmuc`
 --
 ALTER TABLE `danhmuc`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `nguoidung`
 --
 ALTER TABLE `nguoidung`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `tintuc`
+--
+ALTER TABLE `tintuc`
+MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
