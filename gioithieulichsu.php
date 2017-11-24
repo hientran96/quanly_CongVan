@@ -5,22 +5,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Quản Lý Công văn</title>
-    <link rel="shortcut icon"  href="img/title.ico">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-   
-    <!-- Custom styles for this template -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="img/title.ico" />
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-custom.css" />
   </head>
   <body>
-	
-    
-      <?php include_once "navbar.php"; ?>
+    <?php include_once "navbar.php"; ?>
       
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -118,8 +114,6 @@
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+  
   </body>
 </html>

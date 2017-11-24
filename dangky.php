@@ -89,19 +89,19 @@ include_once "functions.php";
 								<label for="Chucvu">Chức vụ</label>
 								
 								<?php
-$sql = "SELECT * FROM chucvu WHERE TenCV='$TenCV' ";
-								$Chucvu = mysqli_query($link, $sql);
-?>
-<select name="Chucvu" id="Chucvu">
-<option value="0">------Chọn chức vụ ------</option>
-<?php
-while($dong=mysql_fetch_array($Chucvu)){
-?>
-<option value="<?php echo $dong['MaCV']?> "><?php echo $dong['TenCV']; ?></option>
-<?php
-}
-?>
-</select>
+							$sql = "SELECT * FROM chucvu WHERE TenCV='$TenCV' ";
+															$Chucvu = mysqli_query($link, $sql);
+							?>
+							<select name="Chucvu" id="Chucvu">
+							<option value="0">------Chọn chức vụ ------</option>
+							<?php
+							while($dong=mysql_fetch_array($Chucvu)){
+							?>
+							<option value="<?php echo $dong['MaCV']?> "><?php echo $dong['TenCV']; ?></option>
+							<?php
+							}
+							?>
+							</select>
 								
 							</div>
 							<div class="form-group col-md-6">

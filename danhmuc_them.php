@@ -16,8 +16,9 @@
 		<link rel="stylesheet" href="css/bootstrap-custom.css" />
 	</head>
 	<body>
+		<?php include_once "navbar.php"; ?>
 		<div class="container">
-			<?php include_once "navbar.php"; ?>
+			
 
 			<div class="card">
 				<h4 class="card-header">Thêm danh muc</h4>
@@ -52,9 +53,6 @@
 					</form>
 				</div>
 			</div>
-
-			<hr />
-			<footer>Bản quyền &copy; <?php echo date("Y") ?> bởi DH15TH.</footer>
 		</div>
 
 		<!-- Optional JavaScript -->

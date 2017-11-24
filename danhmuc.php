@@ -11,21 +11,21 @@
 		<!-- Required meta tags -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<title>iNews</title>
-		<link rel="shortcut icon" type="image/x-icon" href="images/inews.png" />
+		<title>Quản Lý Công văn</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/title.ico" />
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/bootstrap-custom.css" />
 	</head>
 	<body>
-		<div class="container">
+		
 			<?php include_once "navbar.php"; ?>
-
+<div class="container" style="margin: 5% 8% 2% 5%;">
 			<div class="card">
-				<h4 class="card-header">Quản lý danh muc</h4>
+				<h4 class="card-header">Quản lý danh mục</h4>
 				<div class="card-body">
-					<p><a class="btn btn-primary" href="danhmuc_them.php" role="button">Thêm danh muc</a></p>
+					<p><a class="btn btn-primary" href="danhmuc_them.php" role="button">Thêm danh mục</a></p>
 
 					<table class="table table-bordered table-hover table-responsive">
 						<thead>
@@ -54,13 +54,9 @@
 			</div>
 
 			<hr />
-			<footer>Bản quyền &copy; <?php echo date("Y") ?> bởi DH15TH.</footer>
+			
 		</div>
-
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="js/jquery-3.2.1.min.js"></script>
-		<script src="js/popper.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+<?php include_once "footer.php"; ?>
+	
 	</body>
 </html>

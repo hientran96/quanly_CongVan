@@ -1,6 +1,10 @@
 <?php
   require_once "config.php";
   include_once "functions.php";
+    $sql = "SELECT d.TenDM ,t.*,n.HoVaTen
+      FROM danhmuc d , tintuc t , nguoidung n
+      WHERE d.ID = t.ID_danhmuc AND n.ID=t.ID_nguoidung";
+      $danhsach = mysqli_query($link, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,92 +50,27 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-    <div class="container-fluid" style="width: 80%;margin-left: 0.5%;">
+    <div class="container-fluid" style="width: 80%;margin-top: 10px;">
       <div class="card" >
-        <h4 class="card-header">SỰ KIỆN NỖI BẬT</h4>
+        <h4 class="card-header">TIN TỨC VÀ SỰ KIỆN</h4>
         <div class="card-body">
-          <p class="card-text">
-            <div class="media">
-              <img class="align-self-center mr-3" src="img/tintuc.jpg" alt="Generic placeholder image" style="width: 150px;">
-              <div class="media-body">
-                <h5 class="mt-0">Thông báo về công tác văn thư, hành chính của Trường Đại học An Giang</h5>
-                <p>Quyết định v/v công bố thủ tục hành chính mới ban hành thuộc  phạm vi chức năng quản lý của Bộ GD&ĐT</p>
-                <p class="mb-0">Căn cứ kết luận của Hiệu trưởng tại buổi họp duyệt kế hoạch năm học của Phòng Hành chính - Tổng hợp ngày 26/9/2016;
-                Để công tác văn thư, hành chính của Trường đi vào nề nếp, Ban Giám hiệu thông báo một số nội dung trong công tác văn thư hành chính của Trường </p>
-              </div>
-            </div>
-            <div class="media">
-              <img class="align-self-center mr-3" src="img/tintuc.jpg" alt="Generic placeholder image" style="width: 150px;">
-              <div class="media-body">
-                <h5 class="mt-0">Thông báo về công tác văn thư, hành chính của Trường Đại học An Giang</h5>
-                <p>Quyết định v/v công bố thủ tục hành chính mới ban hành thuộc  phạm vi chức năng quản lý của Bộ GD&ĐT</p>
-                <p class="mb-0">Căn cứ kết luận của Hiệu trưởng tại buổi họp duyệt kế hoạch năm học của Phòng Hành chính - Tổng hợp ngày 26/9/2016;
-                Để công tác văn thư, hành chính của Trường đi vào nề nếp, Ban Giám hiệu thông báo một số nội dung trong công tác văn thư hành chính của Trường </p>
-              </div>
-            </div>
-            <div class="media">
-              <img class="align-self-center mr-3" src="img/tintuc.jpg" alt="Generic placeholder image" style="width: 150px;">
-              <div class="media-body">
-                <h5 class="mt-0">Thông báo về công tác văn thư, hành chính của Trường Đại học An Giang</h5>
-                <p>Quyết định v/v công bố thủ tục hành chính mới ban hành thuộc  phạm vi chức năng quản lý của Bộ GD&ĐT</p>
-                <p class="mb-0">Căn cứ kết luận của Hiệu trưởng tại buổi họp duyệt kế hoạch năm học của Phòng Hành chính - Tổng hợp ngày 26/9/2016;
-                Để công tác văn thư, hành chính của Trường đi vào nề nếp, Ban Giám hiệu thông báo một số nội dung trong công tác văn thư hành chính của Trường </p>
-              </div>
-            </div>
-          </p>
-        </div>
-      </div>
-      <div class="card" style="margin-top: 10px;margin-bottom: 10px;">
-        <h4 class="card-header">LOẠI CÔNG VĂN</h4>
-        <div class="card-body">
-          <p class="card-text">
-            <div class="media">
-              <img class="align-self-center mr-3" src="img/sukien.jpg" alt="Generic placeholder image" style="width: 150px;">
-              <div class="media-body">
-                <h5 class="mt-0">Thông báo về công tác văn thư, hành chính của Trường Đại học An Giang</h5>
-                <p>Quyết định v/v công bố thủ tục hành chính mới ban hành thuộc  phạm vi chức năng quản lý của Bộ GD&ĐT</p>
-                <p class="mb-0">Căn cứ kết luận của Hiệu trưởng tại buổi họp duyệt kế hoạch năm học của Phòng Hành chính - Tổng hợp ngày 26/9/2016;
-                Để công tác văn thư, hành chính của Trường đi vào nề nếp, Ban Giám hiệu thông báo một số nội dung trong công tác văn thư hành chính của Trường </p>
-              </div>
-            </div>
-            <div class="media">
-              <img class="align-self-center mr-3" src="img/sukien1.jpg" alt="Generic placeholder image" style="width: 150px;">
-              <div class="media-body">
-                <h5 class="mt-0">Thông báo về công tác văn thư, hành chính của Trường Đại học An Giang</h5>
-                <p>Quyết định v/v công bố thủ tục hành chính mới ban hành thuộc  phạm vi chức năng quản lý của Bộ GD&ĐT</p>
-                <p class="mb-0">Căn cứ kết luận của Hiệu trưởng tại buổi họp duyệt kế hoạch năm học của Phòng Hành chính - Tổng hợp ngày 26/9/2016;
-                Để công tác văn thư, hành chính của Trường đi vào nề nếp, Ban Giám hiệu thông báo một số nội dung trong công tác văn thư hành chính của Trường </p>
-              </div>
-            </div>
-            <div class="media">
-              <img class="align-self-center mr-3" src="img/sukien2.jpg" alt="Generic placeholder image" style="width: 150px;">
-              <div class="media-body">
-                <h5 class="mt-0">Thông báo về công tác văn thư, hành chính của Trường Đại học An Giang</h5>
-                <p>Quyết định v/v công bố thủ tục hành chính mới ban hành thuộc  phạm vi chức năng quản lý của Bộ GD&ĐT</p>
-                <p class="mb-0">Căn cứ kết luận của Hiệu trưởng tại buổi họp duyệt kế hoạch năm học của Phòng Hành chính - Tổng hợp ngày 26/9/2016;
-                Để công tác văn thư, hành chính của Trường đi vào nề nếp, Ban Giám hiệu thông báo một số nội dung trong công tác văn thư hành chính của Trường </p>
-              </div>
-            </div>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid" style="width: 20%; margin-top: -84.3%; margin-right: 0.5%;margin-bottom: 30%;">
-      <div class="card">
-        <h4 class="card-header">THÔNG TIN </h4>
-        <div class="card-body">
-          <p class="card-text">
-            <div class="media">
-              <img class="align-self-center mr-3" src="img/sukien.jpg" alt="Generic placeholder image" style="width: 50px;">
-              <div class="media-body">
-                <h5 class="mt-0">Thông báo về công tác văn thư, hành chính của Trường Đại học An Giang</h5>
-                <p>Quyết định v/v công bố thủ tục hành chính mới ban hành thuộc  phạm vi chức năng quản lý của Bộ GD&ĐT</p>
-                <p class="mb-0">Căn cứ kết luận của Hiệu trưởng tại buổi họp duyệt kế hoạch năm học của Phòng Hành chính - Tổng hợp ngày 26/9/2016;
-                Để công tác văn thư, hành chính của Trường đi vào nề nếp, Ban Giám hiệu thông báo một số nội dung trong công tác văn thư hành chính của Trường </p>
-              </div>
-            </div>
-            
-          </p>
+          <?php
+            while($dong = mysqli_fetch_array($danhsach))
+            {
+          
+            echo "<div class='media'>";
+          
+                echo "<p ><img class='align-self-center mr-3' src='img/{$dong['Hinhanh']}' style='width:160px;height:100px;' alt='' /></p>";
+               echo " <div class='media-body'>";
+                 echo " <h5 class='mt-0'>{$dong['Tieude']}</h5>";
+                  echo "{$dong['Tomtat']}";
+                 echo "<a href='tintuc_xem.php?id={$dong['ID']}'>xem Thêm</a>";
+               echo " </div>";
+              echo "</div>";
+              
+              }
+          ?>
+        
         </div>
       </div>
     </div>

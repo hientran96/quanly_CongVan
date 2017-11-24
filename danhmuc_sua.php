@@ -9,15 +9,16 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<title>iNews</title>
-		<link rel="shortcut icon" type="image/x-icon" href="images/inews.png" />
+		<link rel="shortcut icon" type="image/x-icon" href="img/inews.png" />
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/bootstrap-custom.css" />
 	</head>
 	<body>
+		<?php include_once "navbar.php"; ?>
 		<div class="container">
-			<?php include_once "navbar.php"; ?>
+			
 
 			<div class="card">
 				<h4 class="card-header">Sửa chủ đề</h4>
@@ -37,7 +38,7 @@
 								if($kq)
 									header("Location: danhmuc.php");
 								elseif(mysqli_errno($link) == 1062)
-									ThongBaoLoi("danh muc <strong>$TenDM</strong> đã tồn tại!");
+									ThongBaoLoi("danh mục <strong>$TenDM</strong> đã tồn tại!");
 								else
 									ThongBaoLoi(mysqli_error($link));
 							}
@@ -57,7 +58,7 @@
 							<form method="post" action="danhmuc_sua.php">
 								<input type="hidden" id="ID" name="ID" value="<?php echo $dong['ID'] ?>" />
 								<div class="form-group">
-									<label for="TenDM">Tên danh muc</label>
+									<label for="TenDM">Tên danh mục</label>
 									<input type="text" class="form-control" id="TenDM" name="TenDM" value="<?php echo $dong['TenDM'] ?>" placeholder="" required />
 								</div>
 
@@ -68,9 +69,6 @@
 					?>
 				</div>
 			</div>
-
-			<hr />
-			<footer>Bản quyền &copy; <?php echo date("Y") ?> bởi DH15TH.</footer>
 		</div>
 
 		<!-- Optional JavaScript -->

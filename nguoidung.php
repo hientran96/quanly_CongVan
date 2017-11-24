@@ -60,7 +60,7 @@
 				</div>
 			</div>
 			
-			<hr />
+		
 			
 		</div>
 		<?php include_once "footer.php"; ?>
