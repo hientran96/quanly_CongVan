@@ -14,7 +14,7 @@
         Tin tức</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="tintuc_noibat.php">Tin nổi bậc trong tuần</a>
-          <a class="dropdown-item" href="#">Hoạt động của công ty</a>
+          <a class="dropdown-item" href="hoatdongcongty.php">Hoạt động của công ty</a>
         </div>
       </li>
        <li class="nav-item dropdown">

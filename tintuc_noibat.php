@@ -5,7 +5,9 @@
 	$sql = "SELECT d.TenDM ,t.*,n.HoVaTen
 			FROM danhmuc d , tintuc t , nguoidung n
 			WHERE d.ID = t.ID_danhmuc AND n.ID=t.ID_nguoidung";
+			
 			$danhsach = mysqli_query($link, $sql);
+
 		
 ?>
 <!DOCTYPE html>
@@ -27,9 +29,12 @@
 			<div class="card">
 				<h4 class="card-header">Tin tức và sự kiện</h4>
 				<div class="card-body">
+
 					<?php
-						while($dong = mysqli_fetch_array($danhsach))
+						while($dong = mysqli_fetch_array($danhsach) )
 						{
+					if($dong['ID_danhmuc']==1)
+					{
 					
 						echo "<div class='media'>";
 					
@@ -42,6 +47,8 @@
 							echo "</div>";
 							
 							}
+					}
+						
 					?>
 				
 				</div>

@@ -32,11 +32,11 @@
 							$Tieude= addslashes($_POST['Tieude']);
 							$Tomtat= addslashes($_POST['Tomtat']);
 
-							if(trim($TenDM) == "")
-								ThongBaoLoi("Tên danh mục không được bỏ trống!");
+							if(trim($Tieude) == "")
+								ThongBaoLoi("Tên tiêu đề không được bỏ trống!");
 							else
 							{
-								$sql = "UPDATE tintuc SET TenDM = '$TenDM',Tieude='$Tieude' ,Tomtat='$Tomtat'WHERE ID = $ID";
+								$sql = "UPDATE tintuc SET ID_danhmuc= '$TenDM',Tieude='$Tieude' ,Tomtat='$Tomtat'WHERE ID = $ID";
 								$kq = mysqli_query($link, $sql);
 								if($kq)
 									header("Location:tintuc.php");
@@ -79,7 +79,7 @@
 									?>
 									</select>
 								</div>
-								<div class="form-group " >
+								<div class="form-group col-md-6" >
 							<label for="Tieude">Tiêu đề</label>
 							<input type="text" class="form-control" id="Tieude" name="Tieude" value="<?php echo $dong['Tieude'] ?>" placeholder="" required />
 							
