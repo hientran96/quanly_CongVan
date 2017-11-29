@@ -20,42 +20,36 @@
 		<?php include_once "navbar.php"; ?>
 			<div class="container" style="margin: 5% 8% 2% 5%;">
 			<div class="card">
-				<h4 class="card-header">Sửa tin tức</h4>
+				<h4 class="card-header">Sửa người dùng</h4>
 				<div class="card-body">
 					<?php
-						if(isset($_POST['Tieude'])) // Nếu nhấn nút "Cập nhật"
+						if(isset($_POST['Tomtat'])) 
 						{
-							$ID = addslashes($_POST['ID']);
+							//Nếu nhấn nút "Cập nhật"
+						$ID = addslashes($_POST['ID']);
 							$ID_danhmuc = addslashes($_POST['ID_danhmuc']);
 							$Hinhanh = addslashes($_POST['Hinhanh']);
-							$Tieude = addslashes($_POST['Tieude']);
+							//$Tieude = addslashes($_POST['Tieude']);
 							$Tomtat = addslashes($_POST['Tomtat']);
 							$Noidung = addslashes($_POST['Noidung']);
 							
-							if(trim($Tieude) == "")
-								ThongBaoLoi("Tiêu đề không được bỏ trống!");
-							else
-								if(trim($Tomtat) == "")
-								ThongBaoLoi("Tóm tắt không được bỏ trống!");
-							else
-								if(trim($Noidung) == "")
-								ThongBaoLoi("Nội dung không được bỏ trống!");
+							if(trim($Tomtat) == "" )
+								ThongBaoLoi("Trường không được bỏ trống!");
 							else
 							{
-								$sql = "
-								UPDATE `tintuc` SET `Hinhanh`=$Hinhanh,`Tieude`=$Tieude,`ID_danhmuc`=$ID_danhmuc,`ID_nguoidung`=ID_nguoidung,`Ngaydang`=$Ngaydang,`Tomtat`=$Tomtat,`Noidung`=$Noidung WHERE ID=$ID";
+								$sql = "UPDATE  tintuc SET Hinhanh='$Hinhanh',ID_danhmuc='$ID_danhmuc',Tomtat='$Tomtat',Noidung='$Noidung' WHERE ID=$ID";
 								$kq = mysqli_query($link, $sql);
 								if($kq)
 									header("Location: tintuc.php");
 								elseif(mysqli_errno($link) == 1062)
-									ThongBaoLoi("tin tức <strong>$Tieude</strong> đã tồn tại!");
+									ThongBaoLoi("tintuc <strong>$Tomtat/strong> đã tồn tại!");
 								else
 									ThongBaoLoi(mysqli_error($link));
 							}
 						}
 						else // Lấy dữ liệu "đổ" vào form
 						{
-								// Lấy id từ thanh địa chỉ
+							// Lấy id từ thanh địa chỉ
 							$id = $_GET['id'];
 							
 							$sql = "SELECT * FROM tintuc WHERE ID = $id";
@@ -65,7 +59,7 @@
 							$dong = mysqli_fetch_array($danhsach);
 						
 					?>
-					<form method="post" action="tintuc_sua.php">
+						<form method="post" action="tintuc_sua.php">
 						<input type="hidden" id="ID" name="ID" value="<?php echo $dong['ID'] ?>" />
 						
 						<div class="form-group">
@@ -84,7 +78,11 @@
 						</div>
 						<div class="form-group " >
 							<label for="Noidung">Nội dung</label>
-							<input type="text" class="form-control" id="Noidung " name="Noidung" value="<?php echo $dong['Noidung'] ?>" required />
+							<textarea class="form-control ckeditor" id="Noidung" name="Noidung" placeholder="" required >
+								<?php echo $dong['Noidung'] ?>
+							</textarea>
+						
+						
 							
 						</div>
 					<div class="form-group">

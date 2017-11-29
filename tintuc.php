@@ -36,7 +36,7 @@
 								<th width="10%">Tên danh mục</th>
 								<th width="10%">Tiêu đề</th>
 								<th width="20%">Tóm tắt</th>
-								<!--<th width="35%">Nội dung</th>-->
+						
 								<th width="10%">Người đăng</th>
 								<th width="10%">Ngày đăng</th>
 								
