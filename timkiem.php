@@ -1,6 +1,10 @@
 <?php
 	require_once "config.php";
 	include_once "functions.php";
+	$sql = "SELECT d.TenDM ,t.*,n.HoVaTen
+			FROM danhmuc d , tintuc t , nguoidung n
+			WHERE d.ID = t.ID_danhmuc AND n.ID=t.ID_nguoidung";
+			$danhsach = mysqli_query($link, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,22 +24,23 @@
 		<?php include_once "navbar.php"; ?>
 			<div class="container" style="margin: 5% 8% 2% 5%;">
 			<div class="card">
-				<h4 class="card-header">Sửa người dùng</h4>
+				<h4 class="card-header">tim kiem</h4>
 				<div class="card-body">
-					<?php
-						
-					if (isset ($ _ POST [ ‘timkiem’])) {
-					$ key = addslashes ($ _ POST [ ‘khóa_tìm_kiếm’]);
-					$ sql = "SELECT * FROM tintuc WHERE (LOWER (tiêu đề) LIKE ‘% $ key%’ OR LOWER (noidung) LIKE ‘% $ key%’)";
-					$ KQ = mysql_query ($ sql);
-					if (mysql_num_rows ($ KQ) <> 0) {
+					<?php	
+					if (isset ($_POST[ 'TenDM'])) {
+					$ID = addslashes ($_POST [ 'khóa_tìm_kiếm']);
+					$sql = "SELECT * FROM tintuc WHERE (LOWER (tiêu đề) LIKE '% $ID%'OR LOWER (Noidung) LIKE '% $ID%')";
+					$danhsach = mysqli_query($link, $sql);
+							
+					$dong = mysqli_fetch_array($danhsach);
+					if (mysql_num_rows ($kq)<>0) {
 					?>
 					<div class = "bảng khối">
-					<style h2 = “text-transform: chữ hoa”> <a href=””> Kết quả tìm kiếm </a> </ h2>
+					<h2 style  = " text-transform: chữ hoa ;"> <a href=""> Kết quả tìm kiếm </a> </h2>
 
-					thẻ <div class = “content”>
-					<? php
-					while ($ row = mysql_fetch_object ($ KQ)) {
+					thẻ <div class = "content">
+					<?php
+					while ($dong= mysql_fetch_object ($danhsach)) {
 					?>
 
 					Nội dung cần hiển thị
@@ -49,6 +54,8 @@
 					}
 					?>
 	</div>
+</div>
+</div>
 		<?php include_once "footer.php"; ?>
 		
 	</body>
